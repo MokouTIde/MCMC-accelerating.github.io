@@ -1,4 +1,4 @@
-  # Summary
+  # Catalogue
 
   * [Introductions](README.md)
   * [1. Notations](ch0/not-preface.md)
