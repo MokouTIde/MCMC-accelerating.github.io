@@ -3,7 +3,7 @@
   * [Introductions](README.md)
   * [1. Notations](ch0/not-preface.md)
       * [1.1](ch0/RepSearchPractice.md)
-      * [1.2](ch0/RepTaskBasic.md)
+      * [1.2](ch0/RepTaskBasic.md)_
       * [1.3](ch0/RepTaskAdvanced.md)
       * [1.4](ch0/handbook.md)
   * [2. Preparatory knowledge](ch1/README.md)
@@ -16,7 +16,7 @@
       * [3.2 Metroplis-Hastings algorithm (MH)](ch2/RepTaskBasic.md)
       * [3.3 Gibbs sampler](ch2/RepTaskAdvanced.md)
   * [4. Adaptive MCMC](ch3/README.md)
-      * [4.1 General Adaptive Metropolis (AM) Algorithm]()
+      * [4.1 General Adaptive Metropolis (AM) Algorithm](ch4/4.1 General Adaptive Metropolis (AM) Algorithm.md)
       * [4.2 Adaptive Rejection Metropolis Sampling (ARMS)](ch3/RepTaskBasic.md)
       * [4.3 Independent doubly adaptive rejection Metropolis sampling (IA$^2$RMS)](ch3/RepTaskAdvanced.md)
   * [5. Gradient-based techniques](ch4/README.md)
@@ -29,11 +29,11 @@
       * [6.2 Adaptive importance sampling](ch6/RepTaskBasic.md)
       * [6.3 Convergence and variance](ch6/RepTaskAdvanced.md)
       * [6.4 Group inportance sampling](ch6/handbook.md)
-      * [6.5 Sequential inportance sampling]
+      * [6.5 Sequential inportance sampling]()
   * [7. MC-within-MCMC methods](ch6/README.md)
       * [7.1 Multiple-try Metroplis (MTM)](ch0/RepSearchPractice.md)
-      * [7.2 Independent multiple-try Metroplis (I-MTM) schemes]
-      * [7.3 Group Metroplis sampling]
+      * [7.2 Independent multiple-try Metroplis (I-MTM) schemes]()
+      * [7.3 Group Metroplis sampling]()
   * [Summary](ch8/README.md)
       * [小结](ch8/handbook.md)
   * [Notes](ps/handbooks.md)
