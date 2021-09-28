@@ -16,7 +16,7 @@
       * [3.2 Metroplis-Hastings algorithm (MH)](ch2/RepTaskBasic.md)
       * [3.3 Gibbs sampler](ch2/RepTaskAdvanced.md)
   * [4. Adaptive MCMC](ch3/README.md)
-      * [4.1 General Adaptive Metropolis (AM) Algorithm](/4.1 General Adaptive Metropolis (AM) Algorithm.md)
+      * [4.1 General Adaptive Metropolis (AM) Algorithm]()
       * [4.2 Adaptive Rejection Metropolis Sampling (ARMS)](ch3/RepTaskBasic.md)
       * [4.3 Independent doubly adaptive rejection Metropolis sampling (IA$^2$RMS)](ch3/RepTaskAdvanced.md)
   * [5. Gradient-based techniques](ch4/README.md)
