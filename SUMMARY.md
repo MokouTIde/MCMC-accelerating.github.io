@@ -20,7 +20,7 @@
       * [4.2 Adaptive Rejection Metropolis Sampling (ARMS)](4.2%20Adaptive%20Rejection%20Metropolis%20Sampling%20(ARMS).md)
       * [4.3 Independent doubly adaptive rejection Metropolis sampling (IA$^2$RMS)](4.3%20Independent%20Doubly%20adaptive%20rejection%20Metropolis%20sampling%20(A$^2$RMS).md)
   * [5. Gradient-based techniques](ch4/README.md)
-      * [5.1 Metropolis adjusted Langevin algorithm (MALA)](./5.1 Metropolis adjusted Langevin algorithm (MALA).md)
+      * [5.1 Metropolis adjusted Langevin algorithm (MALA)](5.1%20Metropolis%20adjusted%20Langevin%20algorithm%20(MALA).md)
       * [5.2 Hamiltonian Monte Carlo (HMC)](./5.2 Hamiltonian Monte Carlo (HMC).md)
       * [5.3 Riemann manifold MALA (MMALA) and HMC (RMHMC)](./5.3 Riemann manifold MALA (MMALA) and HMC (RMHMC).md)
       * [5.4 The ”No‐U‐Turn Sampler” (NUTS)](./5.4 The ”No‐U‐Turn Sampler” (NUTS).md)
