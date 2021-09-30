@@ -3,7 +3,7 @@
   * [Introductions](README.md)
   * [1. Notations](ch0/not-preface.md)
       * [1.1](ch0/RepSearchPractice.md)
-      * [1.2](ch0/RepTaskBasic.md)_
+      * [1.2](ch0/RepTaskBasic.md)
       * [1.3](ch0/RepTaskAdvanced.md)
       * [1.4](ch0/handbook.md)
   * [2. Preparatory knowledge](ch1/README.md)
