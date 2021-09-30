@@ -1,0 +1,56 @@
+<h2><a name="header-n30" class="md-header-anchor md-print-anchor" href="af://n30"> </a><span>ARS</span></h2>
+<p><span>Assume that we want to draw samples from a target </span>pdf<span>, with support </span>D_{\theta}\subseteq \mathbb{R}<span>, known up a normalization constant. The ARS procedure can be applied when </span>\pi(\theta)<span> is log-concave, i.e. whenis strictly concave </span>\forall \theta\in D_{\theta}\subseteq \mathbb{R}<span>. In this case, let</span></p>
+<p class='md-math-block'>$
+   S^{(0)}\triangleq \left\{\theta_1^{(0)},\theta_2^{(0)},\cdots,\theta_{K_0}^{(0)}\right\}\subset D_{\theta}
+$</p>
+<p><span>be the set of support points at time </span>0<span>, sorted in ascending order (i.e. </span>\theta_1^{(0)}<\cdots<\theta_{K_0}^{(0)}<span>).</span></p>
+<p><span>From </span>S^{(m)}<span> a piecewise-linear function </span>W_m(\theta)<span> is constructed such that</span></p>
+<p class='md-math-block'>$
+W_m(\theta)\geq V(\theta)
+$</p>
+<p><span>for all </span>\theta\in D_{\theta}<span> and </span>\forall t\in \mathbb{N}<span>. Different approaches are possible for constructing this function. For instance, if we denote by </span>w_k(\theta)<span> the linear function tangent to </span>V(\theta)<span> at </span>\theta\in S<span>, then a suitable piecewise linear function </span>W_m(\theta)<span> is:</span></p>
+<p class='md-math-block'>$
+W_m(\theta)\triangleq min\left\{w_1(\theta),\cdots,w_{m_t}(\theta)\right\}\quad for\quad \theta\in D_{\theta}
+$</p>
+<p><img src='file://E:/%E5%AD%A6%E4%B9%A0/%E7%A0%94%E4%BA%8C/Pres/9.12/MCMC4/Figure/ARS1a.png' alt='ARS1a' referrerPolicy='no-referrer' /></p>
+<p><span>Indeed, defining the intervals</span></p>
+<p class='md-math-block'>$
+\mathcal{I}_0\triangleq (-\infty,\theta_1^{(m)}],\mathcal{I}_1\triangleq (\theta_1^{(m)},\theta_2^{(m)}],\cdots,\mathcal{I}_{K_m-1}\triangleq (\theta_{K_m-1}^{(m)},\theta_{K_m}^{(m)}],\mathcal{I}_{K_m}\triangleq (\theta_{K-m}^{(m)},+\infty)
+$</p>
+<p><span>and denoting as </span>L_{i,i+1}(\theta)<span> the straight line passing through the points </span>(\theta_i,V(\theta_i))<span> and </span>\theta_{i+1},V(\theta_{i+1})<span> for </span>1\leq i\leq K_m<span>, a suitable function </span>W_m(\theta)<span> can be expressed as</span></p>
+<p class='md-math-block'>$
+   W_m(\theta)\triangleq \left\{
+    \begin{array}{ccc}
+      L_{1,2}(\theta) &amp;  &amp; \theta\in\mathcal{I}_0^{(m)}=(-\infty,\theta_1^{(m)}]  \\
+      L_{2,3}(\theta) &amp;  &amp; \theta\in\mathcal{I}_1^{(m)}=(\theta_1^{(m)},\theta_2^{(m)}] \\
+      min\left\{L_{j-1,j}(\theta),L_{j+1,j+2}(\theta)\right\} &amp;  &amp; \theta\in\mathcal{I}_j^{(m)}=(\theta_{j}^{(m)},\theta_{j+1}^{(m)}],2\leq j\leq m_t-2 \\
+      L_{m_t-2,m_t-1} &amp;  &amp; \theta\in\mathcal{I}_{K_m-1}^{(m)}=(s_{m_t-1},s_{m_t}] \\
+      L_{m_t-1,m_t} &amp;  &amp; \theta\in\mathcal{I}_{K_m}^{(m)}=\theta_{K-m}^{(m)},+\infty)
+    \end{array} \right.
+$</p>
+<h2><a name="header-n43" class="md-header-anchor md-print-anchor" href="af://n43"> </a><span>ARMS</span></h2>
+<p><strong><span>Algorithm Adaptive rejection Metropolis sampling (ARMS).</span></strong></p>
+<p>(2)<span> WHILE </span>t\leq T<span>:</span></p>
+<p><span>(a)Build a proposal function,</span>q_m(\theta)<span>,given a set of support points </span>S^{(m)}=\left\{\theta_1^{(m)},\theta_2^{(m)},\cdots,\theta_{K_0}^{(m)}\right\}<span>, according to</span></p>
+<p class='md-math-block'>$
+W_m(\theta)=\left\{
+    \begin{array}{ccc}
+      L_{1,2}^{(m)}(\theta) &amp;  &amp; \theta\in\mathcal{I}_0^{(m)}  \\
+      max\left\{L_{1,2}^{(m)}(\theta),L_{2,3}^{(m)}(\theta)\right\} &amp;  &amp; \theta\in\mathcal{I}_1^{(m)} \\
+      \phi_j^{(m)}(\theta) &amp;  &amp; \theta\in\mathcal{I}_j \\
+      max\left\{L_{K_m-2,K_m-1}^{(m)}(\theta),L_{K_m-1,K_m}^{(m)}(\theta)\right\} &amp;  &amp; \theta\in\mathcal{I}_{K_m-1}^{(m)} \\
+      L_{K_m-1,K_m}^{(m)}(\theta) &amp;  &amp; \theta\in\mathcal{I}_{K_m}^{(m)}
+    \end{array} \right.
+$</p>
+<p><span>(b)Draw </span>\theta'\sim \bar{q}_m(\theta)<span> and </span>u\sim U([0,1))<span>.</span></p>
+<p><span>(c)If </span>u> \frac{\pi(\theta')}{q_m(\theta')}<span>, then reject </span>\theta'<span>, update </span>S^{m+1}=S^{m} \cup \left\{ \theta' \right\},K_{m+1}=K_m+1<span>, and set </span>m=m+1<span>. Go back to step 2(a).</span></p>
+<p><span>(d)Otherwise(i.e., if </span>u \leq \pi(\theta')/q_m(\theta')<span>), draw </span>u'\sim U([0,1))<span> and compute the acceptance probability:</span></p>
+<p class='md-math-block'>$
+\alpha_t\equiv \alpha(\theta&#39;,\theta^{(t-1)})=min[1,\frac{\pi(\theta&#39;)min[\pi(\theta^{(t-1)}),q_m(\theta^{(t-1)})]}{\pi(\theta^{(t-1)})min[\pi(\theta&#39;),q_m(\theta&#39;)]}]
+$</p>
+<p><span>(e)If </span>u'\leq \alpha_t<span>, accept </span>\theta'<span> and set </span>\theta^{(t)}=\theta'<span>. Otherwise (i.e., if </span>u'<\alpha_t<span>), reject </span>\theta'<span> and set </span>\theta^{(t)}=\theta^{(t-1)}<span>.</span></p>
+<p><span>(f)Set </span>S^{(m+1)}=S^{(m)},K_{m+1}=K_m,m=m+1,t=t+1<span> and return to step 2(a).</span></p>
+<p>(3)<span> Approximate the integral</span></p>
+<p class='md-math-block'>$
+\hat{I}_{(T-T_b)}=\frac{1}{T-T_b}\sum_{t=T_b+1}^{T}g(\theta^{(t)})
+$</p>
