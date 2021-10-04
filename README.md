@@ -9,7 +9,7 @@ Methods of accelerating MCMC.
 
 Compare acceleration effect.
 
-  # Catalogue
+# Catalogue
 
   * [Introductions](README.md)
   * [1. Notations](ch0/not-preface.md)
