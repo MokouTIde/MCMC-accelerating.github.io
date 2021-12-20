@@ -12,7 +12,7 @@
       * [2.3](ch1/RepTaskAdvanced.md)
       * [2.4](ch1/handbook.md)
   * [3. Basic MCMC](ch2/README.md)
-      * [3.1 Metroplis algorithm](ch0/RepSearchPractice.md)
+      * [3.1 Metroplis algorithm](ch0/RepSearchPractice)
       * [3.2 Metroplis-Hastings algorithm (MH)](ch2/RepTaskBasic.md)
       * [3.3 Gibbs sampler](ch2/RepTaskAdvanced.md)
   * [4. Adaptive MCMC](ch3/README.md)
